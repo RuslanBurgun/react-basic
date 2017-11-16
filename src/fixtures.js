@@ -6,7 +6,7 @@ export default [
       comments: [
         {
           id:2,
-          text:'bluberb bareafasdf'
+          text:'comment 1'
         }
       ]
     },
@@ -17,7 +17,7 @@ export default [
     comments: [
       {
         id:3,
-        text:'bluberb barfasdf'
+        text:'comment 2'
       }
     ]
   }

@@ -46,9 +46,14 @@ class Article extends Component {
     if(!this.getStateIsOpen ()) {
       return null;
     }
-    const { article } = this.props;
 
-    return <CommentList comments={article.comments}/>;
+    const { article } = this.props;
+    const commentElement = article.comments.map((comment) =>  <li key="{comment.id}"><CommentList article = {comment}/></li>);
+      return (
+          <ul>
+              {commentElement}
+          </ul>
+      )
   }
 
 
