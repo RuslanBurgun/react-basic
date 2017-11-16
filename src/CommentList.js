@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Comment from "./Comment";
 
 
 class CommentList extends Component {
@@ -29,10 +30,17 @@ class CommentList extends Component {
         if(!this.getStateIsOpen ()) {
             return null;
         }
-        const   comment   = this.props.article;
-        console.log(comment);
-        //return null;
-        return <section>{comment.text}</section>;
+
+        const { comments }  = this.props;
+
+        if(!comments || !comments.length){
+            return <p>No comments found</p>
+        }
+        return(
+              <ul>
+                 {comments.map(comment=><li key = {comment.id}> <Comment comment = {comment}/></li>)}
+               </ul>
+             )
     }
 
 

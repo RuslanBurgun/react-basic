@@ -2,13 +2,7 @@ export default [
     {
       id:1,
       title: 'first theme',
-      text:'blablabl blab bla bla bla bla bla bla loren',
-      comments: [
-        {
-          id:2,
-          text:'comment 1'
-        }
-      ]
+      text:'blablabl blab bla bla bla bla bla bla loren'
     },
   {
     id:2,

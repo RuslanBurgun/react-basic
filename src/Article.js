@@ -20,9 +20,8 @@ class Article extends Component {
       <div >
         <h3>{article.title}</h3>
         <button onClick={this.toggleOpen}>{ this.getTitleButton() } </button>
-        <section> {this.getBody()} </section>
-        <section className="comments">
-          {this.getComment()}
+        <section>
+            {this.getBody()}
         </section>
       </div>
     );
@@ -39,24 +38,13 @@ class Article extends Component {
     }
     const { article } = this.props;
 
-    return <section>{article.text}</section>;
+    return (
+    <section>
+        {article.text}
+      <hr/>
+      <CommentList comments = {article.comments}/>
+    </section>)
   }
-
-  getComment() {
-    if(!this.getStateIsOpen ()) {
-      return null;
-    }
-
-    const { article } = this.props;
-    const commentElement = article.comments.map((comment) =>  <li key="{comment.id}"><CommentList article = {comment}/></li>);
-      return (
-          <ul>
-              {commentElement}
-          </ul>
-      )
-  }
-
-
 
   toggleOpen = () => {
     this.setState({
