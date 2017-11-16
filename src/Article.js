@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CommentList from './CommentList';
 
 class Article extends Component {
 
+
   constructor(props) {
     super(props);
-
-    this.state = {
-      isOpen: false
-    }
   }
+
+  state = {
+      isOpen: true
+  };
 
 
   render() {
@@ -21,7 +23,7 @@ class Article extends Component {
         <h3>{article.title}</h3>
         <button onClick={this.toggleOpen}>{ this.getTitleButton() } </button>
         <section>
-            {this.getBody()}
+            { this.getBody() }
         </section>
       </div>
     );
